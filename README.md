@@ -26,7 +26,7 @@ Using the Akamai Adapter means that your Akamai implementation communicates dire
 
 This can introduce a dependency between our systems, which is why most customers prefer the Client-Side Adapter.  See Section 10 of the Technical Guide for help regarding which integration method is most suitable for you.
 
-The Akamai Adapter is a small JavaSrcript library that will run as an EdgeWorker when visitors make requests served by Akamai.  It is implemented as a single JavaScript file for ease of installation - you can just copy and paste it into the Akamai worker editor (see below for step-by-step instructions).  Or, you can upload the latest `.tar.gz` release file, as it includes a `bundle.json` and `main.js`.
+The Akamai Adapter is a small JavaSrcript library that will run as an EdgeWorker when visitors make requests served by Akamai.  It is implemented as a single JavaScript file for ease of installation - you can just copy and paste it into the Akamai worker editor (see below for step-by-step instructions).  Or, you can create a `.tar.gz` containing the `main.js` and `bundle.js` files and upload that instead.
 
 It is adapted from our cross-platform Node Adapter - there are changes to the QueueFairService class, which is the one that usually contains platform-specific code, and also some small changes to the QueueFairAdapter class to use the Akamai native httpRequest and crypto functions.  Unlike our https://github.com/queue-fair/node adapter, all the classes are defined in the one `main.js` file, and the QueueFairConfig class is replaced with a constant object.  It all works the same way.
 
@@ -48,7 +48,7 @@ Here's how to add Queue-Fair to your Akamai implementation.
 
 **3.** Your edgeworker will be given a numeric ID shown in blue.  Click it.  Then it's the orange **Create Version** button.
 
-**4.** You can either drag and drop the latest `.tar.gz` release of this distribution, or Open Editor, and copy-and-paste the `main.js` file from this distribution, then the orange **Create new version** button at the bottom.  Once the version has been created, it's the orange **Activate version** button.  If you are deploying the Queue-Fair Akamai Adapter for the first time, you can deploy straight to Production.  If you are upgrading an existing Queue-Fair Akamai Adapter, you would normally test your changes on Staging first.  Wait for the activation to complete - about 10 minutes.
+**4.** You can either create a `.tar.gz` of containing the `bundle.js` and `main.js` files from this repository and drag and drop it where indicated, or Open Editor, and copy-and-paste the `main.js` file from this distribution.  Once the code is uploaded, it's the orange **Create new version** button at the bottom.  Once the version has been created, it's the orange **Activate version** button.  If you are deploying the Queue-Fair Akamai Adapter for the first time, you can deploy straight to Production.  If you are upgrading an existing Queue-Fair Akamai Adapter, you would normally test your changes on Staging first.  Wait for the activation to complete - about 10 minutes.
 
 **5.** In the three-line menu at the top left, select **CDN -> Properties**, and the ION Property on which you wish to deploy the Adapter. Find your currently Active version, and in the three dots menu in the Actions column, select **Edit New Version**.
 
