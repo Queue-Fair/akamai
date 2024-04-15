@@ -60,7 +60,7 @@ You **MUST** create at least the three variables described above.   All variable
 
 `PMUSER_QF_ACCOUNT_SECRET` must have an **initial value** of the **Account Secret** shown on the *Account -> Your Account page* in the Queue-Fair Portal (and NOT the secret of any Queue). 
 
-'PMUSER_QF_VISITOR_IP' **initial value** should be '0.0.0.0'
+`PMUSER_QF_VISITOR_IP` **initial value** should be `0.0.0.0`
 
 **7.** Scroll down to the **Property Configuration Settings** section and hit the **+ Rules** button.  Keep the default Blank Rule Template and name your new rule `queue-fair-adapter-rule`, then it's the orange **Insert Rule** button.
 
