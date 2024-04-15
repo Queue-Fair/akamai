@@ -101,7 +101,7 @@ function setUpConfigVariable(req,key,prop,type = 'string',sep=',') {
   let o = 'unset'
   switch(type) {
   case 'list':
-    o = i.split(sep)
+    o = i.split(sep).trim()
     break
   case 'bool':
     o = (i == 'true')
