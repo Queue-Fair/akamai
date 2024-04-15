@@ -80,7 +80,7 @@ const config = {
 // An array of commonly used file extensions on which the Adapter will automatically
 // NOT Match. Equivalent to AND Path Does Not Contain .xxx in the
 // Portal Activation Rules.  Preferably, set these as Does Not Match paths in your
-// Adapter Rule Criteria in Control Centre.
+// Adapter Rule Criteria in Control Centre.  Set to null or an empty array to disable.
   excludeFileTypes : [ 'json', 'xml', 'css', 'js', 'webmanifest', 'txt',  //static file types
   'jpeg', 'jpg', 'gif', 'png', 'webp', 'svg', 'bmp', 'ico', //Image types
   'mpeg','mpg','mp4','wav','mp3','pdf',  //media types
