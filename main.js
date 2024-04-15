@@ -1,3 +1,5 @@
+//Queue-Fair Akamai Adapter v2.1.1 Copyright Matt King 2024 see LICENCE in this distribution for more details.
+
 import { TextDecoder, TextEncoder, base64 } from 'encoding'
 import { httpRequest } from 'http-request'
 import { crypto } from 'crypto'
