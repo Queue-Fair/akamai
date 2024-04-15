@@ -108,7 +108,7 @@ Go back to the Portal and put the queue in Demo mode on the Queue Settings page.
 
 **IMPORTANT:**  Once you are sure the Akamai Adapter is working as expected, remove the Client-Side JavaScript Adapter tag from your pages if you were using it, and also remove any Server-Side Adapter code from your origin server if you had already installed it.
 
-**IMPORTANT:**  Responses that contain a `Location:` header or a `Set-Cookie` header from the Adapter must not be cached!  You can check which cache-control headers are present using your browser's Inspector Network Tab.  The Adapter will set a `Cache-Control` header to disable browser and Akamai caching if it sets a cookie or sends a redirect - do not override these with your own EdgeWorker code or other framework.
+**IMPORTANT:**  Responses that contain a `Location:` header or a `Set-Cookie` header from the Adapter **must not** be cached!  You can check which cache-control headers are present using your browser's Inspector Network Tab.  The Adapter will set a `Cache-Control` header to disable browser and Akamai caching if it sets a cookie or sends a redirect - do not override these with your own EdgeWorker code or other framework.  You **should** ensure that none of the pages that may trigger a queue (the ones that can match your current or future Activation Rules) are cached by adding suitable `Cache-Control` headers to your origin responses.
 
 ### For maximum security
 
