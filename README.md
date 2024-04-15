@@ -26,7 +26,7 @@ Using the Akamai Adapter means that your Akamai implementation communicates dire
 
 This can introduce a dependency between our systems, which is why most customers prefer the Client-Side Adapter.  See Section 10 of the Technical Guide for help regarding which integration method is most suitable for you.
 
-The Akamai Adapter is a small JavaSrcript library that will run as an EdgeWorker when visitors make requests served by Akamai.  It is implemented as a single JavaScript file for ease of installation - you can just copy and paste it into the Akamai worker editor (see below for step-by-step instructions).  Or, you can upload the latest '.tar.gz' release file, as it includes a `bundle.json` and `main.js`.
+The Akamai Adapter is a small JavaSrcript library that will run as an EdgeWorker when visitors make requests served by Akamai.  It is implemented as a single JavaScript file for ease of installation - you can just copy and paste it into the Akamai worker editor (see below for step-by-step instructions).  Or, you can upload the latest `.tar.gz` release file, as it includes a `bundle.json` and `main.js`.
 
 It is adapted from our cross-platform Node Adapter - there are changes to the QueueFairService class, which is the one that usually contains platform-specific code, and also some small changes to the QueueFairAdapter class to use the Akamai native httpRequest and crypto functions.  Unlike our https://github.com/queue-fair/node adapter, all the classes are defined in the one `main.js` file, and the QueueFairConfig class is replaced with a constant object.  It all works the same way.
 
