@@ -120,6 +120,14 @@ The Akamai Adapter contains multiple checks to prevent visitors bypassing the qu
  - The Akamai Adapter also checks that passed cookies were produced within the time limit set by Passed Lifetime on the queue Settings page, to prevent visitors trying to cheat by tampering with cookie expiration times or sharing cookie values.  So, the Passed Lifetime should be set to long enough for your visitors to complete their transaction, plus an allowance for those visitors that are slow, but no longer.
  - The signature also includes the visitor's USER_AGENT, to further prevent visitors from sharing cookie values.
 
+### Troubleshooting
+
+If something goes wrong with the Adapter process, the system is designed to fail gracefully and show your page, to avoid inconveniencing your visitors.
+
+To find out what's happened, you can enable debug logging by creating a variable `PMUSER_QF_DEBUG` and setting it to `true`.  This will enable the appearance of debug logging statements as additional headers in responses on which the Adapter has run.  To see them, you will need to follow the Advanced Logging intructions for EdgeWorkers at https://techdocs.akamai.com/edgeworkers/docs/enable-javascript-logging . The maximum total log size of each log header is 1024 bytes, and consequently the log messages have been shortened in this repository compared with our other Adapters.  You can compare the log output with the log statements in `main.js` to find out what the Adapter did with your request.  To see the logs and other debug output, you will need a browser with a header plugin such as ModHeader.  Add a header named `Pragma` with value `akamai-x-ew-debug, akamai-x-ew-debug-subs, akamai-x-ew-debug-rp` and another header named `Akamai-EW-Trace` with an encrypted value obtained by running the Akamai CLI with `./akamai edgeworkers auth --expiry 720` - full details on the Akamai CLI are at https://techdocs.akamai.com/developer/docs/about-clis and https://github.com/akamai/cli
+
+For further insight, you can also run and test the Adapter on your local environment using the Akamai Sandbox described at https://techdocs.akamai.com/sandbox/docs/introduction-sandbox - in that case, you should edit `main.js` and set the `targetPort` property of the `config` object to `9550`, or whatever port you have chosen for Sandbox requests.  Please note that Sandbox does not appear to support `PMUSER_` variables, so you will need to hard code them into the `config` object when making Sandbox tests where indicated.
+
 ## AND FINALLY
 
 Remember we are here to help you! The integration process shouldn't take you more than an hour - so if you are scratching your head, ask us.  Many answers are contained in the Technical Guide too.  We're always happy to help!
