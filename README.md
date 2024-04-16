@@ -36,7 +36,7 @@ If a visitor requests a page that DOES match any queue's Activation Rules, the A
 
 Thus the Akamai Adapter prevents visitors from skipping the queue by disabling the Client-Side JavaScript Adapter, and also eliminates load on your origin server when things get busy.
 
-These instructions assume you already have a Akamai account with an ION Property with an origin already set up.  If that's not the case, you should set one up before proceeding and test that it is working with both https and http requests.  The instructions below also assume you have opted in for the EdgeWorkers Dynamic Compute trial or contract in Akamai Marketplace.
+These instructions assume you already have a Akamai account with an ION Property with an origin already set up.  If that's not the case, you should set one up before proceeding and test that it is working with both https and http requests.  The instructions below also assume you have opted in for the EdgeWorkers Dynamic Compute or Basic Compute trial or contract in Akamai Marketplace.
 
 Akamai includes up to 1 million free EdgeWorker requests per month at the time of writing, so you may well find yourself never paying anything.  Even if you have more than a million page hits per month, the additional cost from Akamai is not substantial.
 
@@ -44,7 +44,7 @@ Here's how to add Queue-Fair to your Akamai implementation.
 
 **1.** **Tell us** you wish to use the Queue-Fair Akamai Adapter - we need to apply some configuration at our end before you can use it, otherwise *it won't work*.
 
-**2.** Go to Control Centre, and in the three-line menu at the top left, select **CDN -> EdgeWorkers**, then the orange **Create EdgeWorker Id** button.  In the dialog that pops up, name it `queue-fair-adapter`.  Select a group from the pulldown,  and the resource group should be `Dynamic Compute`.  You can enter a description if you like, then the orange **Create EdgeWorker Id** button in the dialog.
+**2.** Go to Control Centre, and in the three-line menu at the top left, select **CDN -> EdgeWorkers**, then the orange **Create EdgeWorker Id** button.  In the dialog that pops up, name it `queue-fair-adapter`.  Select a group from the pulldown,  and the resource group should be `Dynamic Compute` or `Basic Compute`, which is slightly cheaper.  You can enter a description if you like, then the orange **Create EdgeWorker Id** button in the dialog.
 
 **3.** Your edgeworker will be given a numeric ID shown in blue.  Click it.  Then it's the orange **Create Version** button.
 
