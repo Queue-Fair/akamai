@@ -625,6 +625,9 @@ class QueueFairAdapter {
     } else if (rule.match=='Contain' && comp!==null &&
       this.includes(comp, test)) {
       ret=true
+    } else if (rule.match == 'EndsWith' && comp !== null &&
+      this.endsWith(comp,test)) {
+      ret = true;
     } else if (rule.match=='Exist') {
       if (typeof comp == 'undefined' || comp===null || ''===comp) {
         ret=false
@@ -1081,7 +1084,7 @@ class QueueFairAdapter {
     this.d = false
     const rule = {
       component: 'Path',
-      match: 'Contain',
+      match: 'EndsWith',
       value: 'NOMATCH',
       caseSensitive: true,
     }
