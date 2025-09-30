@@ -52,7 +52,7 @@ const config = {
 // visitor. The recommended value is true.
   stripPassedString : true,
 
-// PMUSER_QF_MODE
+// PMUSER_QF_ADAPTER_MODE
 // Whether to send the visitor to the Adapter server for counting (simple mode),
 // or consult the Adapter server (safe mode).The recommended value is 'safe'.
 // If you change this to 'simple', consider setting stripPassedString above to
